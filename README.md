@@ -1,15 +1,15 @@
 # pandoc-latex-margin
-[![Build Status](https://img.shields.io/travis/chdemko/pandoc-latex-margin/0.1.0.svg)](https://travis-ci.org/chdemko/pandoc-latex-margin/branches)
-[![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-latex-margin/0.1.0.svg)](https://coveralls.io/github/chdemko/pandoc-latex-margin?branch=0.1.0)
+[![Build Status](https://img.shields.io/travis/chdemko/pandoc-latex-margin/master.svg)](https://travis-ci.org/chdemko/pandoc-latex-margin/branches)
+[![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-latex-margin/master.svg)](https://coveralls.io/github/chdemko/pandoc-latex-margin?branch=master)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/chdemko/pandoc-latex-margin.svg)](https://scrutinizer-ci.com/g/chdemko/pandoc-latex-margin/)
 [![PyPI version](https://img.shields.io/pypi/v/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
-[![PyPI format](https://img.shields.io/pypi/format/pandoc-latex-margin/0.1.0.svg)](https://pypi.org/project/pandoc-latex-margin/0.1.0/)
-[![License](https://img.shields.io/pypi/l/pandoc-latex-margin/0.1.0.svg)](https://raw.githubusercontent.com/chdemko/pandoc-latex-margin/0.1.0/LICENSE)
+[![PyPI format](https://img.shields.io/pypi/format/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
+[![License](https://img.shields.io/pypi/l/pandoc-latex-margin.svg)](https://raw.githubusercontent.com/chdemko/pandoc-latex-margin/master/LICENSE)
 [![Downloads](https://img.shields.io/pypi/dm/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![Python version](https://img.shields.io/pypi/pyversions/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![Development Status](https://img.shields.io/pypi/status/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 
-*pandoc-latex-margin* is a [pandoc] filter for changing the margin size to `CodeBlock` and `Div` that have speficied classes or `latex-left-margin` and `latex-right-margin` attributes.
+*pandoc-latex-margin* is a [pandoc] filter for changing margin size to `CodeBlock` and `Div` that have speficied classes or `latex-left-margin` and `latex-right-margin` attributes.
 
 [pandoc]: http://pandoc.org/
 
