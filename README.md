@@ -5,7 +5,6 @@
 [![PyPI version](https://img.shields.io/pypi/v/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![PyPI format](https://img.shields.io/pypi/format/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![License](https://img.shields.io/pypi/l/pandoc-latex-margin.svg)](https://raw.githubusercontent.com/chdemko/pandoc-latex-margin/master/LICENSE)
-[![Downloads](https://img.shields.io/pypi/dm/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![Python version](https://img.shields.io/pypi/pyversions/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![Development Status](https://img.shields.io/pypi/status/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 
