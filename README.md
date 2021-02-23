@@ -1,10 +1,10 @@
 # pandoc-latex-margin
-[![Build Status](https://img.shields.io/travis/chdemko/pandoc-latex-margin/master.svg)](https://travis-ci.org/chdemko/pandoc-latex-margin/branches)
-[![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-latex-margin/master.svg)](https://coveralls.io/github/chdemko/pandoc-latex-margin?branch=master)
+![Python package](https://github.com/chdemko/pandoc-latex-margin/workflows/Python%20package/badge.svg?branch=develop)
+[![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-latex-margin/develop.svg)](https://coveralls.io/github/chdemko/pandoc-latex-margin?branch=develop)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/chdemko/pandoc-latex-margin.svg)](https://scrutinizer-ci.com/g/chdemko/pandoc-latex-margin/)
 [![PyPI version](https://img.shields.io/pypi/v/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![PyPI format](https://img.shields.io/pypi/format/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
-[![License](https://img.shields.io/pypi/l/pandoc-latex-margin.svg)](https://raw.githubusercontent.com/chdemko/pandoc-latex-margin/master/LICENSE)
+[![License](https://img.shields.io/pypi/l/pandoc-latex-margin.svg)](https://raw.githubusercontent.com/chdemko/pandoc-latex-margin/develop/LICENSE)
 [![Python version](https://img.shields.io/pypi/pyversions/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![Development Status](https://img.shields.io/pypi/status/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 
