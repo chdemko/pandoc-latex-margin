@@ -4,12 +4,13 @@
 [![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-latex-margin/develop.svg)](https://coveralls.io/github/chdemko/pandoc-latex-margin?branch=develop)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/chdemko/pandoc-latex-margin.svg)](https://scrutinizer-ci.com/g/chdemko/pandoc-latex-margin/)
 [![PyPI version](https://img.shields.io/pypi/v/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
-[![Poetry version](https://img.shields.io/badge/poetry-1.2%20|%201.3%20|%201.4%20|%201.5-blue.svg)](https://python-poetry.org/)
-[![Pandoc version](https://img.shields.io/badge/pandoc-2.11%20|%202.12%20|%202.13%20|%202.14%20|%202.15%20|%202.16%20|%202.17%20|%202.18%20|%202.19%20|%203.0%20|%203.1-blue.svg)](https://pandoc.org/)
 [![PyPI format](https://img.shields.io/pypi/format/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
 [![License](https://img.shields.io/pypi/l/pandoc-latex-margin.svg)](https://raw.githubusercontent.com/chdemko/pandoc-latex-margin/develop/LICENSE)
 [![Python version](https://img.shields.io/pypi/pyversions/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
+[![Poetry version](https://img.shields.io/badge/poetry-1.2%20|%201.3%20|%201.4%20|%201.5-blue.svg)](https://python-poetry.org/)
+[![Pandoc version](https://img.shields.io/badge/pandoc-2.11%20|%202.12%20|%202.13%20|%202.14%20|%202.15%20|%202.16%20|%202.17%20|%202.18%20|%202.19%20|%203.0%20|%203.1-blue.svg)](https://pandoc.org/)
 [![Development Status](https://img.shields.io/pypi/status/pandoc-latex-margin.svg)](https://pypi.org/project/pandoc-latex-margin/)
+[![Docs](https://img.shields.io/readthedocs/pandoc-latex-margin.svg?logo=read-the-docs&logoColor=white)](http://pandoc-latex-margin.readthedocs.io/en/latest/)
 
 *pandoc-latex-margin* is a [pandoc] filter for changing margin size to `CodeBlock` and `Div` that have speficied classes or `latex-left-margin` and `latex-right-margin` attributes.
 
