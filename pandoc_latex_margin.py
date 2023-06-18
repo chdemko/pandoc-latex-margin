@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 
 """
-Pandoc filter for changing margins in LaTeX
+Pandoc filter for changing margins in LaTeX.
 """
 
 import re
 
 from panflute import (  # type: ignore
-    RawBlock,
-    MetaList,
     MetaInlines,
+    MetaList,
+    RawBlock,
     RawInline,
     debug,
     run_filter,
@@ -18,6 +18,18 @@ from panflute import (  # type: ignore
 
 # pylint:disable=line-too-long
 def get_correct_margin(length):
+    """
+    Get the margin.
+
+    Arguments
+    ---------
+    length
+        A margin in LaTeX notation.
+
+    Returns
+    -------
+        A correct margin.
+    """
     if (
         re.match(
             "^(-?([1-9][0-9]*)|0)(pt|mm|cm|in|ex|em|bp|pc|dd|cc|nd|nc|sp)$", length
@@ -35,9 +47,22 @@ def get_correct_margin(length):
 
 # pylint: disable=inconsistent-return-statements
 def margin(elem, doc):
-    # Is it in the right format and is it a Div or CodeBlock?
-    if doc.format in ["latex", "beamer"] and elem.tag in ["Div", "CodeBlock"]:
+    """
+    Add margin to element if needed.
 
+    Arguments
+    ---------
+    elem
+        A pandoc element
+    doc
+        The pandoc document
+
+    Returns
+    -------
+        A list of pandoc elements or None.
+    """
+    # Is it in the right format and is it a Div or CodeBlock?
+    if doc.format in ("latex", "beamer") and elem.tag in ("Div", "CodeBlock"):
         left = None
         right = None
 
@@ -46,7 +71,6 @@ def margin(elem, doc):
 
         # Loop on all fontsize definition
         for definition in doc.defined:
-
             # Are the classes correct?
             if classes >= definition["classes"]:
                 left = definition["left"]
@@ -73,9 +97,18 @@ def margin(elem, doc):
                 elem,
                 RawBlock("\\end{pandocchangemargin}", "tex"),
             ]
+    return None
 
 
 def prepare(doc):
+    """
+    Prepare the document.
+
+    Arguments
+    ---------
+    doc
+        The pandoc document
+    """
     # Prepare the definitions
     doc.defined = []
 
@@ -83,10 +116,8 @@ def prepare(doc):
     meta = doc.get_metadata("pandoc-latex-margin")
 
     if isinstance(meta, list):
-
         # Loop on all definitions
         for definition in meta:
-
             # Verify the definition
             if (
                 isinstance(definition, dict)
@@ -97,6 +128,16 @@ def prepare(doc):
 
 
 def add_definition(defined, definition):
+    """
+    Add a definition.
+
+    Arguments
+    ---------
+    defined
+        A list of definition
+    definition
+        A new definition
+    """
     # Get the classes
     classes = definition["classes"]
 
@@ -117,6 +158,14 @@ def add_definition(defined, definition):
 
 
 def finalize(doc):
+    """
+    Finalize the document.
+
+    Arguments
+    ---------
+    doc
+        The pandoc document
+    """
     # Add header-includes if necessary
     if "header-includes" not in doc.metadata:
         doc.metadata["header-includes"] = MetaList()
@@ -126,7 +175,7 @@ def finalize(doc):
             doc.metadata["header-includes"]
         )  # noqa: E501
 
-    # Add usefull LaTex definition
+    # Add useful LaTex definition
     doc.metadata["header-includes"].append(
         MetaInlines(
             RawInline(
@@ -144,6 +193,18 @@ def finalize(doc):
 
 
 def main(doc=None):
+    """
+    Process the transformation.
+
+    Arguments
+    ---------
+    doc
+        The pandoc document.
+
+    Returns
+    -------
+        The modified document.
+    """
     return run_filter(margin, prepare=prepare, doc=doc, finalize=finalize)
 
 
