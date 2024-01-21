@@ -6,7 +6,7 @@ Pandoc filter for changing margins in LaTeX.
 
 import re
 
-from panflute import (  # type: ignore
+from panflute import (
     MetaInlines,
     MetaList,
     RawBlock,
