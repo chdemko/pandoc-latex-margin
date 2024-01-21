@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 
 from unittest import TestCase
-from panflute import *
+from panflute import convert_text, debug
 
 import pandoc_latex_margin
 
