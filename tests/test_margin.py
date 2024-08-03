@@ -1,5 +1,3 @@
-# This Python file uses the following encoding: utf-8
-
 from unittest import TestCase
 from panflute import convert_text, debug
 
@@ -77,46 +75,34 @@ pandoc-latex-margin:
 \let\endpandocchangemargin=\endlist
 `{=tex}
 
-```{=tex}
 \begin{pandocchangemargin}{1cm}{2cm}
-```
+
 ::: {.left latex-right-margin="2cm"}
 Content1
 :::
 
-```{=tex}
 \end{pandocchangemargin}
-```
-```{=tex}
 \begin{pandocchangemargin}{2cm}{1cm}
-```
+
 ::: {.right latex-left-margin="2cm"}
 Content2
 :::
 
-```{=tex}
 \end{pandocchangemargin}
-```
-```{=tex}
 \begin{pandocchangemargin}{0pt}{2cm}
-```
+
 ::: {latex-right-margin="2cm"}
 Content3
 :::
 
-```{=tex}
 \end{pandocchangemargin}
-```
-```{=tex}
 \begin{pandocchangemargin}{2cm}{0pt}
-```
+
 ::: {latex-left-margin="2cm"}
 Content4
 :::
 
-```{=tex}
 \end{pandocchangemargin}
-```
         """,
         "latex",
     )

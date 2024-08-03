@@ -3,10 +3,14 @@
 """
 Pandoc filter for changing margins in LaTeX.
 """
+from __future__ import annotations
 
 import re
+from typing import Any
 
 from panflute import (
+    Doc,
+    Element,
     MetaInlines,
     MetaList,
     RawBlock,
@@ -17,7 +21,7 @@ from panflute import (
 
 
 # pylint:disable=line-too-long
-def get_correct_margin(length):
+def get_correct_margin(length: str) -> str:
     """
     Get the margin.
 
@@ -28,6 +32,7 @@ def get_correct_margin(length):
 
     Returns
     -------
+    str
         A correct margin.
     """
     if (
@@ -39,14 +44,14 @@ def get_correct_margin(length):
         return length
     debug(
         "[WARNING] pandoc-latex-margin: "
-        + margin
+        + length
         + " is not a correct LaTeX margin; using 0pt"
     )  # noqa: E501
     return "0pt"
 
 
 # pylint: disable=inconsistent-return-statements
-def margin(elem, doc):
+def margin(elem: Element, doc: Doc) -> list[Element] | None:
     """
     Add margin to element if needed.
 
@@ -59,6 +64,7 @@ def margin(elem, doc):
 
     Returns
     -------
+    list[Element] | None
         A list of pandoc elements or None.
     """
     # Is it in the right format and is it a Div or CodeBlock?
@@ -100,7 +106,7 @@ def margin(elem, doc):
     return None
 
 
-def prepare(doc):
+def prepare(doc: Doc) -> None:
     """
     Prepare the document.
 
@@ -127,7 +133,7 @@ def prepare(doc):
                 add_definition(doc.defined, definition)
 
 
-def add_definition(defined, definition):
+def add_definition(defined: list[dict[str, Any]], definition: dict[str, Any]):
     """
     Add a definition.
 
@@ -157,7 +163,7 @@ def add_definition(defined, definition):
     defined.append({"classes": set(classes), "left": left, "right": right})
 
 
-def finalize(doc):
+def finalize(doc: Doc) -> None:
     """
     Finalize the document.
 
@@ -192,7 +198,7 @@ def finalize(doc):
     )
 
 
-def main(doc=None):
+def main(doc: Doc | None = None) -> Doc:
     """
     Process the transformation.
 
@@ -203,6 +209,7 @@ def main(doc=None):
 
     Returns
     -------
+    Doc
         The modified document.
     """
     return run_filter(margin, prepare=prepare, doc=doc, finalize=finalize)
