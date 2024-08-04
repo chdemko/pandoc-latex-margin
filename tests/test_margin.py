@@ -4,32 +4,50 @@ from panflute import convert_text, debug
 import pandoc_latex_margin
 
 
-def conversion(markdown, format="markdown"):
-    doc = convert_text(markdown, standalone=True)
-    doc.format = format
-    pandoc_latex_margin.main(doc)
-    return doc
-
-
-def verify_conversion(markdown, expected, format="markdown"):
-    doc = conversion(markdown, format)
-    text = convert_text(
-        doc,
-        input_format="panflute",
-        output_format="markdown",
-        extra_args=["--wrap=none"],
-        standalone=True,
-    )
-    debug("**computed**")
-    debug(text.strip())
-    debug("**expected**")
-    debug(expected.strip())
-    assert text.strip() == expected.strip()
-
-
-def test_margin():
-    verify_conversion(
+class MarginTestCase(TestCase):
+    def verify_conversion(
+        self,
+        text,
+        expected,
+        transform,
+        input_format="markdown",
+        output_format="latex",
+        standalone=False,
+    ) -> None:
         """
+        Verify the conversion.
+
+        Parameters
+        ----------
+        text
+            input text
+        expected
+            expected text
+        transform
+            filter function
+        input_format
+            input format
+        output_format
+            output format
+        standalone
+            is the output format standalone ?
+        """
+        doc = convert_text(text, input_format=input_format, standalone=True)
+        doc.format = output_format
+        doc = transform(doc)
+        converted = convert_text(
+            doc.content,
+            input_format="panflute",
+            output_format=output_format,
+            extra_args=["--wrap=none"],
+            standalone=standalone,
+        )
+        print(converted)
+        self.assertEqual(converted.strip(), expected.strip())
+
+    def test_margin(self):
+        self.verify_conversion(
+            """
 ---
 pandoc-latex-margin:
   - classes: [left]
@@ -53,56 +71,32 @@ Content3
 ::: {latex-left-margin="2cm"} :::
 Content4
 :::::::::::::::
-
-        """,
-        r"""
----
-header-includes:
-- |
-  `\def\pandocchangemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-  \let\endpandocchangemargin=\endlist
-  `{=tex}
-pandoc-latex-margin:
-- classes:
-  - left
-  left: 1cm
-- classes:
-  - right
-  right: 1cm
----
-
-`\def\pandocchangemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endpandocchangemargin=\endlist
-`{=tex}
-
+    
+            """,
+            r"""
 \begin{pandocchangemargin}{1cm}{2cm}
 
-::: {.left latex-right-margin="2cm"}
 Content1
-:::
 
 \end{pandocchangemargin}
+
 \begin{pandocchangemargin}{2cm}{1cm}
 
-::: {.right latex-left-margin="2cm"}
 Content2
-:::
 
 \end{pandocchangemargin}
+
 \begin{pandocchangemargin}{0pt}{2cm}
 
-::: {latex-right-margin="2cm"}
 Content3
-:::
 
 \end{pandocchangemargin}
+
 \begin{pandocchangemargin}{2cm}{0pt}
 
-::: {latex-left-margin="2cm"}
 Content4
-:::
 
 \end{pandocchangemargin}
-        """,
-        "latex",
-    )
+            """,
+            pandoc_latex_margin.main,
+        )
