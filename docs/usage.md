@@ -2,8 +2,8 @@
 
 To apply the filter, use the following option with pandoc:
 
-~~~{prompt} bash
-pandoc --filter pandoc-latex-margin
+~~~shell-session
+$ pandoc --filter pandoc-latex-margin
 ~~~
 
 Explanation
