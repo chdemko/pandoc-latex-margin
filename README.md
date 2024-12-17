@@ -1,13 +1,13 @@
 Installation
 ============
 
-[![Python package](https://github.com/chdemko/pandoc-latex-margin/workflows/Python%20package/badge.svg?branch=develop)](https://github.com/chdemko/pandoc-latex-margin/actions/workflows/python-package.yml)
+[![Python package](https://img.shields.io/github/actions/workflow/status/chdemko/pandoc-latex-margin/python-package.yml?logo=github&branch=develop)](https://github.com/chdemko/pandoc-latex-margin/actions/workflows/python-package.yml)
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://pypi.org/project/black/)
 [![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-latex-margin/develop.svg?logo=Codecov&logoColor=white)](https://coveralls.io/github/chdemko/pandoc-latex-margin?branch=develop)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/chdemko/pandoc-latex-margin.svg?logo=scrutinizer)](https://scrutinizer-ci.com/g/chdemko/pandoc-latex-margin/)
-[![Code Climate](https://codeclimate.com/github/chdemko/pandoc-latex-margin/badges/gpa.svg)](https://codeclimate.com/github/chdemko/pandoc-latex-margin/)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/chdemko/pandoc-latex-margin?logo=codeclimate&barnch=develop)](https://codeclimate.com/github/chdemko/pandoc-latex-margin/)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/chdemko/pandoc-latex-margin/develop.svg?logo=codefactor)](https://www.codefactor.io/repository/github/chdemko/pandoc-latex-margin)
 [![Codacy](https://img.shields.io/codacy/grade/7df59d426cab4adca51d86403f0cc4b6.svg?logo=codacy)](https://app.codacy.com/gh/chdemko/pandoc-latex-margin/dashboard)
 [![PyPI version](https://img.shields.io/pypi/v/pandoc-latex-margin.svg?logo=pypi&logoColor=white)](https://pypi.org/project/pandoc-latex-margin/)
@@ -16,7 +16,7 @@ Installation
 [![Downloads](https://img.shields.io/pypi/dm/pandoc-latex-margin?logo=pypi&logoColor=white)](https://pepy.tech/project/pandoc-latex-margin)
 [![Development Status](https://img.shields.io/pypi/status/pandoc-latex-margin.svg?logo=pypi&logoColor=white)](https://pypi.org/project/pandoc-latex-margin/)
 [![Python version](https://img.shields.io/pypi/pyversions/pandoc-latex-margin.svg?logo=pypi&logoColor=white)](https://pypi.org/project/pandoc-latex-margin/)
-[![Pandoc version](https://img.shields.io/badge/pandoc-2.11%20|%202.12%20|%202.13%20|%202.14%20|%202.15%20|%202.16%20|%202.17%20|%202.18%20|%202.19%20|%203.0%20|%203.1%20|%203.2%20|%203.3%20|%203.4%20|%203.5-blue.svg?logo=markdown)](https://pandoc.org/)
+[![Pandoc version](https://img.shields.io/badge/pandoc-2.11%20..%203.6-blue.svg?logo=markdown)](https://pandoc.org/)
 [![Latest release](https://img.shields.io/github/release-date/chdemko/pandoc-latex-margin.svg?logo=github)](https://github.com/chdemko/pandoc-latex-margin/releases)
 [![Last commit](https://img.shields.io/github/last-commit/chdemko/pandoc-latex-margin/develop?logo=github)](https://github.com/chdemko/pandoc-latex-margin/commit/develop/)
 [![Repo Size](https://img.shields.io/github/repo-size/chdemko/pandoc-latex-margin.svg?logo=github)](http://pandoc-latex-margin.readthedocs.io/en/latest/)
